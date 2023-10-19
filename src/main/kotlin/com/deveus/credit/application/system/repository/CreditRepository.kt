@@ -8,7 +8,7 @@ import java.util.UUID
 interface CreditRepository: JpaRepository<Credit, Long> {
 
     @Query( value= "SELECT * FROM CREDITO WHERE CUSTOMER_ID=?1", nativeQuery = true )
-    fun findByCustomerId(customerId : Long): Credit
+    fun findByCustomerId(customerId : Long): List<Credit>
 
     fun findByCreditCode(creditCode: UUID): Credit?
 }

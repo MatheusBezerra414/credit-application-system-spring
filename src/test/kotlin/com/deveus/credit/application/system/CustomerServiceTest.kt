@@ -80,7 +80,7 @@ class CustomerServiceTest {
 
 
     companion object{
-        private fun buildCustomer(
+         fun buildCustomer(
             firstName: String = "José",
             lastName: String = "Da Silva",
             cpf: String = "12345678900",
