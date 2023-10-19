@@ -1,4 +1,4 @@
-package com.deveus.credit.application.system
+package com.deveus.credit.application.system.services
 
 import com.deveus.credit.application.system.model.Address
 import com.deveus.credit.application.system.model.Customer

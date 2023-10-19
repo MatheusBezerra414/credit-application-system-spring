@@ -1,5 +1,6 @@
 package com.deveus.credit.application.system.service.impl
 
+import com.deveus.credit.application.system.exception.BusinessException
 import com.deveus.credit.application.system.model.Customer
 import com.deveus.credit.application.system.repository.CustomerRepository
 import com.deveus.credit.application.system.service.ICustomerService
@@ -14,7 +15,7 @@ class CustomerService(
     override fun findAll(): List<Customer> = this.customerRepository.findAll()
 
     override fun findById(id: Long): Customer {
-        return this.customerRepository.findById(id).orElseThrow{throw RuntimeException("not found!")}
+        return this.customerRepository.findById(id).orElseThrow{throw BusinessException("not found!")}
     }
     override fun delete(id: Long) {
         val customer: Customer = this.findById(id)

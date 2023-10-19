@@ -31,11 +31,10 @@ data class Customer(
     @Column(nullable = false)
     val income: BigDecimal,
 
-    @Column(nullable = false)
     @OneToMany(fetch = FetchType.LAZY, cascade = arrayOf(CascadeType.REMOVE, CascadeType.PERSIST), mappedBy = "customer")
     val credit: List<Credit> = mutableListOf(),
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 )
