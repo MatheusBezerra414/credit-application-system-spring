@@ -7,7 +7,6 @@ import com.deveus.credit.application.system.service.ICustomerService
 class CustomerService(
     private val customerRepository: CustomerRepository
 ): ICustomerService {
-
     override fun save(customer: Customer): Customer = this.customerRepository.save(customer);
 
     override fun findAll(): List<Customer> = this.customerRepository.findAll()
