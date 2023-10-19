@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 class CustomerService(
     private val customerRepository: CustomerRepository
 ): ICustomerService {
-    override fun save(customer: Customer): Customer = this.customerRepository.save(customer);
+    override fun save(customer: Customer): Customer = this.customerRepository.save(customer)
 
     override fun findAll(): List<Customer> = this.customerRepository.findAll()
 
