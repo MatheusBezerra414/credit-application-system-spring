@@ -1,6 +1,6 @@
 package com.deveus.credit.application.system.exception
 
-class BusinessException(
+data class BusinessException(
     override val message: String?)
-    : RuntimeException(message = message) {
+    : RuntimeException(message) {
 }
