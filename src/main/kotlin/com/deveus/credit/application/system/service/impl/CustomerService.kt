@@ -4,12 +4,15 @@ import com.deveus.credit.application.system.exception.BusinessException
 import com.deveus.credit.application.system.model.Customer
 import com.deveus.credit.application.system.repository.CustomerRepository
 import com.deveus.credit.application.system.service.ICustomerService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
 class CustomerService(
     private val customerRepository: CustomerRepository
 ): ICustomerService {
+
+
     override fun save(customer: Customer): Customer = this.customerRepository.save(customer)
 
     override fun findAll(): List<Customer> = this.customerRepository.findAll()

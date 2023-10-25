@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.HttpStatusCode
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.PutMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -19,9 +20,9 @@ import org.springframework.web.bind.annotation.RestController
 class CustomerController(
     private val customerService: CustomerService
 ) {
-    @PutMapping
-    fun saveCustomer(@RequestBody customer: CustomerDTO): ResponseEntity<CustomerView> {
-        val saved: Customer = this.customerService.save(customer.toEntity())
+    @PostMapping
+    fun saveCustomer(@RequestBody customerDto: CustomerDTO): ResponseEntity<CustomerView> {
+        val saved: Customer = this.customerService.save(customerDto.toEntity())
         return ResponseEntity.status(HttpStatus.CREATED).body(CustomerView(saved))
     }
 
