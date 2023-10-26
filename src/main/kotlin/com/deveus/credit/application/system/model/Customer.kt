@@ -1,8 +1,7 @@
 package com.deveus.credit.application.system.model
 
-import jakarta.annotation.Nullable
+import com.deveus.credit.application.system.dto.req.CustomerDTO
 import jakarta.persistence.*
-import jakarta.validation.constraints.Email
 import org.hibernate.annotations.Cascade
 import java.math.BigDecimal
 
@@ -36,5 +35,5 @@ data class Customer(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long? = null,
+    var id: Long? = null,
 )
