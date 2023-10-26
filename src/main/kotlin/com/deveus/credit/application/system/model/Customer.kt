@@ -9,10 +9,10 @@ import java.math.BigDecimal
 @Table(name = "cliente")
 data class Customer(
     @Column(nullable = false)
-    val firstName: String,
+    var firstName: String,
 
     @Column(nullable = false)
-    val lastName: String,
+    var lastName: String,
 
     @Column(nullable = false, unique = true)
     val cpf: String,
@@ -28,7 +28,7 @@ data class Customer(
     val address: Address = Address(),
 
     @Column(nullable = false)
-    val income: BigDecimal,
+    var income: BigDecimal,
 
     @OneToMany(fetch = FetchType.LAZY, cascade = arrayOf(CascadeType.REMOVE, CascadeType.PERSIST), mappedBy = "customer")
     val credit: List<Credit> = mutableListOf(),
